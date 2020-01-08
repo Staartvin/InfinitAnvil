@@ -1,0 +1,3 @@
+# Whether players cannot break an infinite anvil. If this is set to true, players need the infinitanvil.break.protect
+# permission to be able to break an infinite anvil.
+protect-infinite-anvils: true

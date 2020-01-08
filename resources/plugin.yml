@@ -1,0 +1,21 @@
+name: InfinitAnvil
+version: 1.0
+description: Allows you to create anvils that never wear out!
+author: Staartvin
+main: me.staartvin.plugins.infinitanvil.InfinitAnvil
+api-version: 1.13
+commands:
+  anvil:
+    aliases: [anvils, infinitanvil, ianvil, ia]
+    description: Main command of InfinitAnvil
+    usage: /anvil
+permissions:
+  infinitanvil.break.protect:
+    description: Allows players to break a protected anvil.
+    default: op
+  infinitanvil.toggle:
+    description: Allows players to create/destroy infinite anvils.
+    default: op
+  infinitanvil.use:
+    description: Allows players to use infinite anvils.
+    default: true
