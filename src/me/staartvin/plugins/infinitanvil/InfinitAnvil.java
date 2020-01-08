@@ -2,7 +2,8 @@ package me.staartvin.plugins.infinitanvil;
 
 import me.staartvin.plugins.infinitanvil.commands.CommandsManager;
 import me.staartvin.plugins.infinitanvil.configurations.ConfigurationManager;
-import me.staartvin.plugins.infinitanvil.listeners.*;
+import me.staartvin.plugins.infinitanvil.listeners.BreakAnvil;
+import me.staartvin.plugins.infinitanvil.listeners.ClickAnvil;
 import me.staartvin.plugins.infinitanvil.storage.AnvilStorage;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,7 +26,7 @@ public class InfinitAnvil extends JavaPlugin {
         this.commandHandler = new CommandsManager();
 
         this.getServer().getPluginManager().registerEvents(new BreakAnvil(), this);
-        this.getServer().getPluginManager().registerEvents(new UseAnvil(), this);
+        this.getServer().getPluginManager().registerEvents(new ClickAnvil(), this);
 
         this.getCommand("anvil").setExecutor(commandHandler);
         this.getCommand("anvil").setTabCompleter(commandHandler);

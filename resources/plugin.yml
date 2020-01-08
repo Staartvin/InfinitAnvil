@@ -19,3 +19,6 @@ permissions:
   infinitanvil.use:
     description: Allows players to use infinite anvils.
     default: true
+  infinitanvil.reload:
+    description: Allows players to reload the configuration file.
+    default: op

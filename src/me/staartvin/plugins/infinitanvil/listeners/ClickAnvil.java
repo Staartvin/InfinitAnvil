@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class UseAnvil implements Listener {
+public class ClickAnvil implements Listener {
 
     @EventHandler
     public void useAnvil(final PlayerInteractEvent event) {
@@ -65,6 +65,12 @@ public class UseAnvil implements Listener {
 
         if (stored) {
             event.getPlayer().sendMessage(ChatColor.GOLD + "This anvil now has " + ChatColor.GREEN + "infinite" + ChatColor.GOLD + " uses.");
+
+            if (!InfinitAnvil.getInstance().getConfigurationManager().shouldProtectAnvils()) {
+                event.getPlayer().sendMessage(ChatColor.RED + "Warning: Anvils are not protected from being destroyed" +
+                        " " +
+                        "(see config)");
+            }
         } else {
             event.getPlayer().sendMessage(ChatColor.GOLD + "This anvil" + ChatColor.RED + " no longer has infinite " +
                     "uses.");
