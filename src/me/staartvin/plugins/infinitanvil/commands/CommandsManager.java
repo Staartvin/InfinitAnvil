@@ -38,31 +38,6 @@ public class CommandsManager implements CommandExecutor, TabCompleter {
         return true;
     }
 
-    private void help(final String label, final CommandSender sender) {
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e ------ &6Infinite Anvil Help &e------"));
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/" + label + " help &7- Displays this page"));
-        if (sender.hasPermission("infiniteanvil.set")) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/" + label + " set [radius] &7- Set " +
-                    "anvil(s) to be infinite"));
-        }
-        if (sender.hasPermission("infiniteanvil.remove")) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/" + label + " remove [radius] &7- " +
-                    "Remove anvil(s) from infinite"));
-        }
-        if (sender.hasPermission("infiniteanvil.toggle")) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/" + label + " toggle [on/off] &7- " +
-                    "Toggle infinite anvil on place on/off"));
-        }
-        if (sender.hasPermission("infiniteanvil.purge")) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/" + label + " purge &7- Clear all " +
-                    "infinite anvils from the database"));
-        }
-        if (sender.hasPermission("infiniteanvil.reload")) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a/" + label + " reload &7- Reloads the " +
-                    "configuration"));
-        }
-    }
-
     @Override
     public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
         return Collections.singletonList("reload");
